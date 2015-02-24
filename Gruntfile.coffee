@@ -6,6 +6,11 @@ module.exports = (grunt) ->
       app: ["*.coffee", "test/*.coffee"]
       options:
         configFile: "coffeelint.json"
+    scsslint:
+      app: ["css/*.scss"]
+      options:
+        config: ".scss-lint.yml"
 
   grunt.loadNpmTasks "grunt-coffeelint"
-  grunt.registerTask "default", ["coffeelint"]
+  grunt.loadNpmTasks "grunt-scss-lint"
+  grunt.registerTask "default", ["coffeelint", "scsslint"]

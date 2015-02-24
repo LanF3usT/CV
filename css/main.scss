@@ -1,0 +1,44 @@
+// ###############
+// ### IMPORTS ###
+// ###############
+
+@import "vendor/reset.css";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+// #################
+// ### VARIABLES ###
+// #################
+
+$gutter: 10px;
+$gutter-double: $gutter*2;
+
+$grey: #32323A;
+$lightgrey: #8C8C8C;
+$verylightgrey: #F1F2F7;
+
+// #################
+// ### GÉNÉRIQUE ###
+// #################
+
+body {
+  background: $verylightgrey;
+  color: $grey;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+strong {
+  font-weight: 600;
+}
+
+// ############
+// ### PAGE ###
+// ############
+
+.page {
+  margin: $gutter-double auto;
+  width: 768px;
+}

@@ -24,6 +24,10 @@ devMode = "development" == app.get("env")
 ######################
 
 app.set("port", process.env.PORT || 3000)
+app.set("view engine", "jade")
+
+# Passe le dossier CSS en static
+app.use(express.static(__dirname + "/css"))
 
 # Log en mode dev ou common
 app.use morgan(if devMode then "dev" else "common")
@@ -36,7 +40,7 @@ app.locals.pretty = devMode
 ##############
 
 app.get "/", (req, res) ->
-  res.json { name: "Hello World!", created_at: moment() }
+  res.render "index", { title: "CV de Bastien Maillard" }
 
 app.get "*", (req, res) ->
   res.status(404).json { error: "404 : page non trouvée !", created_at: moment() }
