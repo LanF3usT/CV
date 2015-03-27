@@ -1,0 +1,34 @@
+{
+  "prenom":   "Bastien",
+  "nom":      "Maillard",
+  "email":    "bastien.maillard@gmail.com",
+  "fonction": "Développeur Web",
+  "resume":   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ea dolore qui nobis eum, similique ab recusandae sapiente voluptatum ullam mollitia quaerat cum officia. Nobis, pariatur, aut! Repudiandae, incidunt, reprehenderit.",
+  "competences": {
+    "label": "Compétences",
+    "langages": [
+      { "nom": "HTML5", "pourcentage": 90 },
+      { "nom": "CSS", "pourcentage": 90 },
+      { "nom": "SASS / Compass", "pourcentage": 90 },
+      { "nom": "JavaScript / jQuery / CoffeeScript", "pourcentage": 90 },
+      { "nom": "AngularJS", "pourcentage": 90 },
+      { "nom": "PHP5 (POO)", "pourcentage": 90 },
+      { "nom": "Wordpress / Drupal", "pourcentage": 90 },
+      { "nom": "Ruby / Ruby on Rails / Sinatra", "pourcentage": 90 },
+      { "nom": "Git", "pourcentage": 90 },
+      { "nom": "NodeJS", "pourcentage": 90 },
+      { "nom": "MySQL / PostgreSQL / MongoDB", "pourcentage": 90 }
+    ]
+  }, "experiences": {
+    "label": "Expériences",
+    "postes": [
+      {
+        "societe": "Cosmic Communication",
+        "fonction": "Responsable du pôle Web" ,
+        "date_deb": "2014/10/01",
+        "date_fin": "",
+        "resume": "test"
+      }
+    ]
+  }
+}

@@ -4,7 +4,68 @@ html(lang="fr")
     title!= title
     link(rel="stylesheet" href="/main.css")
   body
-    .page
-      h1
-        img(src="", alt!= title)
+    header
+      .face.col.col-2
+        a(href="/")
+          img(src="//www.gravatar.com/avatar/#{gravatar_hash}?s=132", alt!= title, class="rounded")
+      .resume.col.col-8.arrow
+        h1 #{data["prenom"]} #{data["nom"]}
+        h2 #{data["fonction"]}
+        p #{data["resume"]}
 
+    section
+      header.col.col-10
+        h2 #{competences["label"]}
+
+      .content.col.col-10
+        ul
+          each langage, index in competences["langages"]
+            li #{langage["nom"]} - #{langage["pourcentage"]}
+
+    section
+      header.col.col-10
+        h2 #{experiences["label"]}
+
+      each poste, index in experiences["postes"]
+        article
+          .intitule.col.col-4
+            p
+              | <strong>#{poste["societe"]}</strong><br>
+              | #{poste["fonction"]}<br>
+              span.date
+                unless poste["date_fin"]
+                  | depuis&nbsp;
+                | #{moment(poste["date_deb"]).format("MMMM YYYY")}<br>
+                if poste["date_fin"]
+                  | #{poste["date_fin"]}<br>
+                  | (#{moment(poste["date_fin"]).from(poste["date_deb"], true)})
+                else
+                  | (#{moment().from(poste["date_deb"], true)})
+          .description.col.col-6.arrow
+            if typeof(poste["resume"]) == "object"
+              ul
+                each li, index in poste["resume"]
+                  li #{li["mission"]}
+            else
+              p #{poste["resume"]}
+
+    section
+      header.col.col-10
+        h2 Formations
+
+      .content.col.col-10
+        p
+          span.date 2008-2009 &mdash;&nbsp;
+          | Licence Professionnelle - Activités et Techniques de Communication (Multimédia)
+
+        p
+          span.date 2005-2008 &mdash;&nbsp;
+          | DUT - Informatique
+
+
+    section
+      header.col.col-10
+        h2 Intérêts / Loisirs
+
+      .content.col.col-10
+        p Séries / Jeux vidéos / Internet

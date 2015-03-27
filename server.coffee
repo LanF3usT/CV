@@ -5,11 +5,14 @@
 ################
 
 require "colors"
-express = require("express")
-http    = require("http")
-morgan  = require("morgan")
-util    = require("util")
-moment  = require("moment")
+express   = require("express")
+http      = require("http")
+morgan    = require("morgan")
+util      = require("util")
+moment    = require("moment")
+md5       = require("MD5")
+fs        = require("fs")
+data      = JSON.parse(fs.readFileSync(__dirname + "/data.json", "utf8"))
 
 #################
 ### VARIABLES ###
@@ -26,6 +29,9 @@ devMode = "development" == app.get("env")
 app.set("port", process.env.PORT || 3000)
 app.set("view engine", "jade")
 
+moment.locale("fr")
+app.locals.moment = moment
+
 # Passe le dossier CSS en static
 app.use(express.static(__dirname + "/css"))
 
@@ -40,7 +46,12 @@ app.locals.pretty = devMode
 ##############
 
 app.get "/", (req, res) ->
-  res.render "index", { title: "CV de Bastien Maillard" }
+  res.render "index",
+    title: "CV de #{data["prenom"]} #{data["nom"]}"
+    gravatar_hash: md5(data["email"])
+    data: data
+    competences: data["competences"]
+    experiences: data["experiences"]
 
 app.get "*", (req, res) ->
   res.status(404).json { error: "404 : page non trouvée !", created_at: moment() }
