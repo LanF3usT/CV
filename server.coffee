@@ -52,6 +52,8 @@ app.get "/", (req, res) ->
     data: data
     competences: data["competences"]
     experiences: data["experiences"]
+    formations:  data["formations"]
+    interets:    data["interets"]
 
 app.get "*", (req, res) ->
   res.status(404).json { error: "404 : page non trouvée !", created_at: moment() }

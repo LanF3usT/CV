@@ -20,7 +20,8 @@ html(lang="fr")
       .content.col.col-10
         ul
           each langage, index in competences["langages"]
-            li #{langage["nom"]} - #{langage["pourcentage"]}
+            li.langage(class='percent-#{langage["pourcentage"]}')
+              | #{langage["nom"]}
 
     section
       header.col.col-10
@@ -37,7 +38,7 @@ html(lang="fr")
                   | depuis&nbsp;
                 | #{moment(poste["date_deb"]).format("MMMM YYYY")}<br>
                 if poste["date_fin"]
-                  | #{poste["date_fin"]}<br>
+                  | à #{moment(poste["date_fin"]).format("MMMM YYYY")}<br>
                   | (#{moment(poste["date_fin"]).from(poste["date_deb"], true)})
                 else
                   | (#{moment().from(poste["date_deb"], true)})
@@ -51,21 +52,17 @@ html(lang="fr")
 
     section
       header.col.col-10
-        h2 Formations
+        h2 #{formations["label"]}
 
       .content.col.col-10
-        p
-          span.date 2008-2009 &mdash;&nbsp;
-          | Licence Professionnelle - Activités et Techniques de Communication (Multimédia)
-
-        p
-          span.date 2005-2008 &mdash;&nbsp;
-          | DUT - Informatique
-
+        each etude, index in formations["etudes"]
+          p
+            span.date #{etude["annee_deb"]}-#{etude["annee_fin"]} &mdash;&nbsp;
+            | #{etude["nom"]}
 
     section
       header.col.col-10
-        h2 Intérêts / Loisirs
+        h2 #{interets["label"]}
 
       .content.col.col-10
-        p Séries / Jeux vidéos / Internet
+        p #{interets["resume"]}

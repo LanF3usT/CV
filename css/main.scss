@@ -21,6 +21,9 @@ $white: #FFF;
 $grey: #32323A;
 $lightgrey: #8C8C8C;
 $verylightgrey: #F1F2F7;
+$green: #3C763D;
+$orange: #8A6D3B;
+$red: #A94442;
 
 // ############
 // ### GRID ###
@@ -88,16 +91,8 @@ li {
 // ############
 
 .face {
-  // background: $grey;
-  // @include border-radius(20px);
-
   img {
-    @include single-transition(opacity, 3s, ease-out);
     display: block;
-
-    &:hover {
-      opacity: 0;
-    }
   }
 }
 
@@ -187,3 +182,40 @@ article {
   font-size: 12px;
 }
 
+.langage {
+  position: relative;
+  margin-bottom: 20px;
+
+  &:before {
+    position: absolute;
+    bottom: -15px;
+    display: block;
+    content: "";
+    margin-right: 0;
+    width: 0;
+    height: 10px;
+    background: #93cce7;
+  }
+
+  @for $i from 1 through 20 {
+    $percent: $i*5;
+
+    &.percent-#{$percent}:before {
+      width: percentage($percent/100);
+      @include animation(slide#{$percent} 2s);
+
+      @if $percent < 40 {
+        background: $red;
+      } @elseif $percent >= 40 and $percent < 70 {
+        background: $orange;
+      } @elseif $percent >= 70 {
+        background: $green;
+      }
+    }
+
+    @include keyframes(slide#{$percent}) {
+      0%   { width: 0; }
+      100% { width: percentage($percent/100); }
+    }
+  }
+}

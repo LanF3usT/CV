@@ -8,16 +8,15 @@
     "label": "Compétences",
     "langages": [
       { "nom": "HTML5", "pourcentage": 90 },
-      { "nom": "CSS", "pourcentage": 90 },
-      { "nom": "SASS / Compass", "pourcentage": 90 },
-      { "nom": "JavaScript / jQuery / CoffeeScript", "pourcentage": 90 },
-      { "nom": "AngularJS", "pourcentage": 90 },
-      { "nom": "PHP5 (POO)", "pourcentage": 90 },
-      { "nom": "Wordpress / Drupal", "pourcentage": 90 },
-      { "nom": "Ruby / Ruby on Rails / Sinatra", "pourcentage": 90 },
-      { "nom": "Git", "pourcentage": 90 },
-      { "nom": "NodeJS", "pourcentage": 90 },
-      { "nom": "MySQL / PostgreSQL / MongoDB", "pourcentage": 90 }
+      { "nom": "CSS / SASS / Compass", "pourcentage": 80 },
+      { "nom": "JavaScript / jQuery / CoffeeScript", "pourcentage": 70 },
+      { "nom": "AngularJS", "pourcentage": 50 },
+      { "nom": "PHP5 (POO)", "pourcentage": 80 },
+      { "nom": "Wordpress / Drupal", "pourcentage": 80 },
+      { "nom": "Ruby / Ruby on Rails / Sinatra", "pourcentage": 60 },
+      { "nom": "Git", "pourcentage": 70 },
+      { "nom": "NodeJS", "pourcentage": 40 },
+      { "nom": "MySQL / PostgreSQL / MongoDB", "pourcentage": 60 }
     ]
   }, "experiences": {
     "label": "Expériences",
@@ -27,8 +26,51 @@
         "fonction": "Responsable du pôle Web" ,
         "date_deb": "2014/10/01",
         "date_fin": "",
-        "resume": "test"
+        "resume": [
+          { "mission": "Découpage des tâches" },
+          { "mission": "Estimation du temps pour chaque tâche" },
+          { "mission": "Planning" },
+          { "mission": "Développement PHP, Ruby on Rails" },
+          { "mission": "Développement Front-end" }
+        ]
+      }, {
+        "societe": "Cosmic Communication",
+        "fonction": "Développeur Web" ,
+        "date_deb": "2010/08/30",
+        "date_fin": "2014/10/01",
+        "resume": [
+          { "mission": "Développement PHP (POO)" },
+          { "mission": "Développement Ruby on Rails" },
+          { "mission": "Développement Front-end (CoffeeScript, Compass, HTML, Responsive)" },
+          { "mission": "Projets sous Wordpress (développement de modules spécifiques)" }
+        ]
+      }, {
+        "societe": "Minit-L",
+        "fonction": "Développeur Web" ,
+        "date_deb": "2009/12/01",
+        "date_fin": "2010/08/30",
+        "resume": [
+          { "mission": "Développement PHP" },
+          { "mission": "Développement Front-end (HTML, CSS, JS)" },
+          { "mission": "Projets sous Drupal" }
+        ]
       }
     ]
+  }, "formations": {
+    "label": "Formations",
+    "etudes": [
+      {
+        "nom": "Licence Professionnelle - Activités et Techniques de Communication (Multimédia)",
+        "annee_deb": "2008",
+        "annee_fin": "2009"
+      }, {
+        "nom": "DUT - Informatique",
+        "annee_deb": "2005",
+        "annee_fin": "2008"
+      }
+    ]
+  }, "interets": {
+    "label": "Intérêts / Loisirs",
+    "resume" : "Séries / Jeux vidéos / Internet"
   }
 }
