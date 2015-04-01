@@ -21,9 +21,9 @@ $white: #FFF;
 $grey: #32323A;
 $lightgrey: #8C8C8C;
 $verylightgrey: #F1F2F7;
-$green: #3C763D;
-$orange: #8A6D3B;
-$red: #A94442;
+$green: #5CB85C;
+$orange: #F0AD4B;
+$red: #D9534F;
 
 // ############
 // ### GRID ###
@@ -202,7 +202,7 @@ article {
 
     &.percent-#{$percent}:before {
       width: percentage($percent/100);
-      @include animation(slide#{$percent} 2s);
+      @include animation(slide#{$percent} 2s ease-in);
 
       @if $percent < 40 {
         background: $red;
@@ -213,8 +213,15 @@ article {
       }
     }
 
+    // Bounce to be alive!
     @include keyframes(slide#{$percent}) {
       0%   { width: 0; }
+      70% { width: percentage($percent/100); }
+      75% { width: percentage(($percent - 3)/100); }
+      80% { width: percentage($percent/100); }
+      85% { width: percentage(($percent - 2)/100); }
+      90% { width: percentage($percent/100); }
+      95% { width: percentage(($percent - 1)/100); }
       100% { width: percentage($percent/100); }
     }
   }
