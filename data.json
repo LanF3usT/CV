@@ -8,15 +8,15 @@
     "label": "Compétences",
     "langages": [
       { "nom": "HTML5", "pourcentage": 90 },
-      { "nom": "CSS / SASS / Compass", "pourcentage": 80 },
+      { "nom": "CSS / SASS / Compass", "pourcentage": 85 },
       { "nom": "JavaScript / jQuery / CoffeeScript", "pourcentage": 70 },
-      { "nom": "AngularJS", "pourcentage": 50 },
-      { "nom": "PHP5 (POO)", "pourcentage": 80 },
+      { "nom": "AngularJS", "pourcentage": 55 },
+      { "nom": "PHP5 (POO)", "pourcentage": 85 },
       { "nom": "Wordpress / Drupal", "pourcentage": 80 },
       { "nom": "Ruby / Ruby on Rails / Sinatra", "pourcentage": 60 },
       { "nom": "Git", "pourcentage": 70 },
-      { "nom": "NodeJS", "pourcentage": 40 },
-      { "nom": "MySQL / PostgreSQL / MongoDB", "pourcentage": 60 }
+      { "nom": "NodeJS", "pourcentage": 50 },
+      { "nom": "MySQL / PostgreSQL / MongoDB", "pourcentage": 65 }
     ]
   }, "experiences": {
     "label": "Expériences",
